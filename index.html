@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in Page</title>
+    <link rel="stylesheet" href="css/body.css" />
+    <link rel="stylesheet" href="css/loginForm.css" />
+    <link rel="stylesheet" href="css/lampSwitch.css" />
+    <link rel="stylesheet" href="css/forgotPassword.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="outerContainer">
+      <div class="lampOuterContainer">
+        <div class="lampInnerContainer">
+          <div class="glowState">
+            <img src="images/Glow.png" alt="glowLamp" id="glowLamp" />
+          </div>
+          <div class="unlitState">
+            <img src="images/Unlit.png" alt="unlitLamp" id="unlitLamp" />
+          </div>
+        </div>
+        <div class="buttonWrapper">
+          <div class="btnBase">
+            <div class="btnSurface" id="btnSurface">
+              <div class="btnBulbContainer" id="btnState">
+                <div class="btnBulb">
+                  <img
+                    src="images/unlitBulb.png"
+                    alt="unlitBulb"
+                    id="unlitState"
+                  />
+                  <img
+                    src="images/glowBulb.png"
+                    alt="glowBulb"
+                    id="glowState"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="formOuterContainer" id="formContainer">
+        <div class="formInnerContainer">
+          <div class="formContent" id="formContent">
+            <div class="formTitle">User Login</div>
+            <div class="inputField">
+              <input type="text" id="username" required />
+              <label id="usernameLabel">username</label>
+            </div>
+            <div class="inputField">
+              <input type="password" id="password" required />
+              <label id="passwordLabel">Password</label>
+            </div>
+            <div class="rememberForgotContainer">
+              <div class="rememberMeContainer">
+                <input type="checkbox" id="checkBox" />
+                <label>Remember me</label>
+              </div>
+              <div class="forgotPasswordLink" id="forgotPasswordLink">
+                Forgot password?
+              </div>
+            </div>
+            <div class="logInButton">Log in</div>
+            <div class="orContainer">
+              <div class="line"></div>
+              <span class="orText">Or Continue With</span>
+              <div class="line"></div>
+            </div>
+            <div class="socialLoginContainer">
+              <div class="googleAuthBox">
+                <div class="authIcon">
+                  <img src="images/google.png" alt="Google" />
+                </div>
+                <div class="authName">Continue with Google</div>
+              </div>
+              <div class="appleAuthBox">
+                <div class="authIcon">
+                  <img src="images/apple.png" alt="Google" />
+                </div>
+                <div class="authName">Continue with Apple</div>
+              </div>
+            </div>
+            <div class="signUpOption">
+              <div class="signUpText">Don’t have account?</div>
+              <div class="singUplink" id="singUplink">Sign Up</div>
+            </div>
+          </div>
+          <div class="forgotPassOuterContainer">
+            <div class="forgotPasswordInnerContainer" id="forgotPassCard">
+              <div class="title">Forgot Password</div>
+              <div class="emialInputField">
+                <input type="text" id="username" required />
+                <label id="registeredEmailLabel">Registered email</label>
+              </div>
+              <div class="resetPassButton">Reset Password</div>
+              <div class="backToLoginButton" id="backToLoginButton">
+                <i class="fa-solid fa-arrow-left" style="color: #10161b"></i
+                >Back to log in
+              </div>
+            </div>
+          </div>
+          <div class="signUpFormContainer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="src/toggleSwitch.js" defer></script>
+  <script src="src/formToggle.js" defer></script>
+</html>
