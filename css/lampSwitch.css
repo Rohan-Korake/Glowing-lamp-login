@@ -1,0 +1,132 @@
+.lampOuterContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lampInnerContainer {
+  width: 50%;
+  padding: 16px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glowState img,
+.unlitState img {
+  width: 300px;
+}
+
+.glowState img {
+  display: none;
+}
+
+.btnBase {
+  width: 130px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: #2b2b2b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btnSurface {
+  width: 115px;
+  height: 45px;
+  border-radius: 6px;
+  background-color: #161616;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px;
+}
+
+.btnBulbContainer {
+  width: 47px;
+  height: 35px;
+  border-radius: 4px;
+  background-color: #2a2a2a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnBulb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnBulb img {
+  width: 20px;
+}
+
+#glowState {
+  display: none;
+}
+
+/* Tablet view */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .glowState img,
+  .unlitState img {
+    width: 190px;
+  }
+
+  .btnBase {
+    width: 55px;
+    height: 35px;
+    border-radius: 4px;
+  }
+
+  .btnSurface {
+    width: 50px;
+    height: 30px;
+    border-radius: 3px;
+    padding: 2px;
+  }
+
+  .btnBulbContainer {
+    width: 25px;
+    height: 25px;
+    border-radius: 2px;
+  }
+
+  .btnBulb img {
+    width: 12px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .glowState img,
+  .unlitState img {
+    width: 80px;
+  }
+
+  .btnBase {
+    width: 40px;
+    height: 25px;
+    border-radius: 4px;
+  }
+
+  .btnSurface {
+    width: 35px;
+    height: 20px;
+    border-radius: 3px;
+    padding: 2px;
+  }
+
+  .btnBulbContainer {
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+  }
+
+  .btnBulb img {
+    width: 8px;
+  }
+}
