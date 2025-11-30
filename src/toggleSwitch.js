@@ -40,8 +40,8 @@ toggleSwitch.addEventListener("click", function () {
   //Lamp animation
   formContainer.style.visibility = isLampOn ? "visible" : "hidden";
   formContainer.style.animation = isLampOn
-    ? "opacityAnimation 1.5s forwards ease"
-    : "hiddenAnimation 1.5s forwards ease";
+    ? "opacityAnimation 1s forwards ease"
+    : "hiddenAnimation 1s forwards ease";
 
   if (isLampOn) {
     username.value = "";

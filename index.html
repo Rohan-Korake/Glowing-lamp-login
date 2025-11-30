@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/loginForm.css" />
     <link rel="stylesheet" href="css/lampSwitch.css" />
     <link rel="stylesheet" href="css/forgotPassword.css" />
+    <link rel="stylesheet" href="css/signUpForm.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -55,11 +56,16 @@
           <div class="formContent" id="formContent">
             <div class="formTitle">User Login</div>
             <div class="inputField">
-              <input type="text" id="username" required />
+              <input type="text" id="username" autocomplete="off" required />
               <label id="usernameLabel">username</label>
             </div>
             <div class="inputField">
-              <input type="password" id="password" required />
+              <input
+                type="password"
+                id="password"
+                autocomplete="off"
+                required
+              />
               <label id="passwordLabel">Password</label>
             </div>
             <div class="rememberForgotContainer">
@@ -100,7 +106,12 @@
             <div class="forgotPasswordInnerContainer" id="forgotPassCard">
               <div class="title">Forgot Password</div>
               <div class="emialInputField">
-                <input type="text" id="username" required />
+                <input
+                  type="text"
+                  id="RegisteredEmail"
+                  autocomplete="off"
+                  required
+                />
                 <label id="registeredEmailLabel">Registered email</label>
               </div>
               <div class="resetPassButton">Reset Password</div>
@@ -110,11 +121,51 @@
               </div>
             </div>
           </div>
-          <div class="signUpFormContainer"></div>
+          <div class="signUpFormContainer" id="signUpForm">
+            <div class="signUpFormTitle">Create Your Account</div>
+            <div class="inputFieldContainer">
+              <div class="firstName">
+                <input type="text" id="firstName" autocomplete="off" required />
+                <label id="firstNameLabel">First Name</label>
+              </div>
+              <div class="lastName">
+                <input type="text" id="lastName" autocomplete="off" required />
+                <label id="lastNameLabel">Last Name</label>
+              </div>
+            </div>
+            <div class="signUpFormInputField">
+              <input type="text" id="emailId" autocomplete="off" required />
+              <label id="Email Address">Email Address</label>
+            </div>
+            <div class="signUpFormInputField">
+              <input
+                type="password"
+                id="newPassword"
+                autocomplete="off"
+                required
+              />
+              <label id="newPasswordLabel">Set Password</label>
+            </div>
+            <div class="signUpFormInputField">
+              <input
+                type="password"
+                id="confirmNewPassword"
+                autocomplete="off"
+                required
+              />
+              <label id="confirmNewPasswordLabel">Confirm Password</label>
+            </div>
+            <div class="signUpButton">Create Account</div>
+            <div class="loginRedirectContainer">
+              <div class="AlreadyAccount">Already have an account?</div>
+              <div class="loginLinkContainer" id="loginFormLink">Login</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </body>
   <script src="src/toggleSwitch.js" defer></script>
   <script src="src/formToggle.js" defer></script>
+  <script src="src/resetInputs.js" defer></script>
 </html>
