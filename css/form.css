@@ -44,3 +44,7 @@ form {
     margin: 0 0.5rem;
   }
 }
+
+.form-button i {
+  width: 20px;
+}
