@@ -1,15 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log in Page</title>
-
-    <link rel="stylesheet" href="css/body.css" />
-    <link rel="stylesheet" href="css/loginForm.css" />
-    <link rel="stylesheet" href="css/lampSwitch.css" />
-    <link rel="stylesheet" href="css/forgotPassword.css" />
-    <link rel="stylesheet" href="css/signUpForm.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -22,13 +17,14 @@
 
   <body>
     <div class="outerContainer">
+      <!-- lamp container  -->
       <div class="lampOuterContainer">
         <div class="lampInnerContainer">
           <div class="glowState">
-            <img src="images/Glow.png" alt="glowLamp" id="glowLamp" />
+            <img src="assets/Glow.png" alt="glowLamp" id="glowLamp" />
           </div>
           <div class="unlitState">
-            <img src="images/Unlit.png" alt="unlitLamp" id="unlitLamp" />
+            <img src="assets/Unlit.png" alt="unlitLamp" id="unlitLamp" />
           </div>
         </div>
         <div class="buttonWrapper">
@@ -37,12 +33,12 @@
               <div class="btnBulbContainer" id="btnState">
                 <div class="btnBulb">
                   <img
-                    src="images/unlitBulb.png"
+                    src="assets/unlitBulb.png"
                     alt="unlitBulb"
                     id="unlitState"
                   />
                   <img
-                    src="images/glowBulb.png"
+                    src="assets/glowBulb.png"
                     alt="glowBulb"
                     id="glowState"
                   />
@@ -52,13 +48,18 @@
           </div>
         </div>
       </div>
+
+      <!-- form container  -->
       <div class="formOuterContainer" id="formContainer">
         <div class="formInnerContainer">
-          <div class="formContent" id="formContent">
+          <!-- login form  -->
+          <form id="loginForm">
             <div class="formTitle">User Login</div>
+            <div class="form-error" id="loginFormError"></div>
             <div class="inputField">
               <input type="text" id="username" autocomplete="off" required />
               <label id="usernameLabel">username</label>
+              <div class="field-error" id="usernameError"></div>
             </div>
             <div class="inputField">
               <input
@@ -68,6 +69,7 @@
                 required
               />
               <label id="passwordLabel">Password</label>
+              <div class="field-error" id="passwordError"></div>
             </div>
             <div class="rememberForgotContainer">
               <div class="rememberMeContainer">
@@ -78,52 +80,35 @@
                 Forgot password?
               </div>
             </div>
-            <div class="logInButton">Log in</div>
-            <div class="orContainer">
-              <div class="line"></div>
-              <span class="orText">Or Continue With</span>
-              <div class="line"></div>
-            </div>
-            <div class="socialLoginContainer">
-              <div class="googleAuthBox">
-                <div class="authIcon">
-                  <img src="images/google.png" alt="Google" />
-                </div>
-                <div class="authName">Continue with Google</div>
-              </div>
-              <div class="appleAuthBox">
-                <div class="authIcon">
-                  <img src="images/apple.png" alt="Google" />
-                </div>
-                <div class="authName">Continue with Apple</div>
-              </div>
-            </div>
+            <div class="form-button">Log in</div>
+
             <div class="signUpOption">
               <div class="signUpText">Don’t have account?</div>
               <div class="singUplink" id="singUplink">Sign Up</div>
             </div>
-          </div>
+          </form>
+
+          <!-- forgot password form  -->
           <div class="forgotPassOuterContainer">
-            <div class="forgotPasswordInnerContainer" id="forgotPassCard">
-              <div class="title">Forgot Password</div>
-              <div class="emialInputField">
-                <input
-                  type="text"
-                  id="RegisteredEmail"
-                  autocomplete="off"
-                  required
-                />
+            <form id="forgotPassCard">
+              <div class="formTitle">Forgot Password</div>
+              <div class="form-error" id="forgotPasswordFormError"></div>
+              <div class="inputField">
+                <input type="text" id="username" autocomplete="off" required />
                 <label id="registeredEmailLabel">Registered email</label>
+                <div class="field-error" id="registerEmail"></div>
               </div>
-              <div class="resetPassButton">Reset Password</div>
-              <div class="backToLoginButton" id="backToLoginButton">
+              <div class="form-button">Reset Password</div>
+              <div class="form-button" id="backToLoginButton">
                 <i class="fa-solid fa-arrow-left" style="color: #10161b"></i
                 >Back to log in
               </div>
-            </div>
+            </form>
           </div>
-          <div class="signUpFormContainer" id="signUpForm">
-            <div class="signUpFormTitle">Create Your Account</div>
+
+          <!-- create account form  -->
+          <form id="signUpForm">
+            <div class="formTitle">Create Account</div>
             <div class="inputFieldContainer">
               <div class="firstName">
                 <input type="text" id="firstName" autocomplete="off" required />
@@ -134,20 +119,27 @@
                 <label id="lastNameLabel">Last Name</label>
               </div>
             </div>
-            <div class="signUpFormInputField">
-              <input type="text" id="emailId" autocomplete="off" required />
-              <label id="Email Address">Email Address</label>
-            </div>
-            <div class="signUpFormInputField">
+            <div class="inputField">
               <input
                 type="password"
-                id="newPassword"
+                id="confirmNewPassword"
+                autocomplete="off"
+                required
+              />
+              <label id="EmailAddress">Email Address</label>
+              <div class="field-error" id="newEmailError"></div>
+            </div>
+            <div class="inputField">
+              <input
+                type="password"
+                id="confirmNewPassword"
                 autocomplete="off"
                 required
               />
               <label id="newPasswordLabel">Set Password</label>
+              <div class="field-error" id="setPasswordError"></div>
             </div>
-            <div class="signUpFormInputField">
+            <div class="inputField">
               <input
                 type="password"
                 id="confirmNewPassword"
@@ -155,18 +147,17 @@
                 required
               />
               <label id="confirmNewPasswordLabel">Confirm Password</label>
+              <div class="field-error" id="confirmPasswordError"></div>
             </div>
-            <div class="signUpButton">Create Account</div>
+            <div class="form-button">Create Account</div>
             <div class="loginRedirectContainer">
               <div class="AlreadyAccount">Already have an account?</div>
               <div class="loginLinkContainer" id="loginFormLink">Login</div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
   </body>
-  <script src="src/toggleSwitch.js" defer></script>
-  <script src="src/formToggle.js" defer></script>
-  <script src="src/resetInputs.js" defer></script>
+  <script src="src/main.js" type="module"></script>
 </html>

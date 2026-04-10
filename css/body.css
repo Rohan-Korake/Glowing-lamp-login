@@ -27,6 +27,11 @@ body {
     flex-direction: column;
     gap: 0.5rem;
   }
+
+  .field-error {
+    color: red;
+    font-size: 0.7rem;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 1024px) {

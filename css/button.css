@@ -1,0 +1,26 @@
+.form-button {
+  background-color: #fbd033f0;
+  color: #10161b;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  margin-top: 0.5rem;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-button:hover,
+.form-button:active {
+  background-color: #fbd033;
+}
+
+@media (max-width: 600px) {
+  .form-button {
+    font-size: 0.9rem;
+  }
+}
