@@ -1,4 +1,5 @@
-.form-button {
+.form-button,
+.auth-button {
   background-color: #fbd033f0;
   color: #10161b;
   width: 100%;
@@ -14,13 +15,21 @@
   cursor: pointer;
 }
 
+.auth-button {
+  width: 15rem;
+  margin: 0.5rem;
+}
+
 .form-button:hover,
-.form-button:active {
+.form-button:active,
+.auth-button:hover,
+.auth-button:active {
   background-color: #fbd033;
 }
 
 @media (max-width: 600px) {
-  .form-button {
+  .form-button,
+  .auth-button {
     font-size: 0.9rem;
   }
 }

@@ -1,0 +1,44 @@
+.welcome-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.welcome-Page {
+  display: none;
+}
+
+.success-message {
+  color: rgb(185, 182, 182);
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* #loginPage {
+  display: none;
+} */
+
+.auth-option {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 600px) {
+  .form-button {
+    font-size: 0.9rem;
+  }
+
+  .auth-option {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .success-message {
+    font-size: 1rem;
+  }
+}

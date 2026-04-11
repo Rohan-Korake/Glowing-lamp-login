@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <div class="outerContainer">
+    <div class="outerContainer" id="loginPage">
       <!-- lamp container  -->
       <div class="lampOuterContainer">
         <div class="lampInnerContainer">
@@ -80,7 +80,7 @@
                 Forgot password?
               </div>
             </div>
-            <div class="form-button">Log in</div>
+            <div class="form-button" id="loginButton">Log in</div>
 
             <div class="signUpOption">
               <div class="signUpText">Don’t have account?</div>
@@ -90,7 +90,7 @@
 
           <!-- forgot password form  -->
           <div class="forgotPassOuterContainer">
-            <form id="forgotPassCard">
+            <form id="forgotPasswordForm">
               <div class="formTitle">Forgot Password</div>
               <div class="form-error" id="forgotPasswordFormError"></div>
               <div class="inputField">
@@ -99,6 +99,7 @@
                 <div class="field-error" id="registerEmail"></div>
               </div>
               <div class="form-button">Reset Password</div>
+              <div class="form-button" id="cancelButton">Cancel</div>
               <div class="form-button" id="backToLoginButton">
                 <i class="fa-solid fa-arrow-left" style="color: #10161b"></i
                 >Back to log in
@@ -156,6 +157,16 @@
             </div>
           </form>
         </div>
+      </div>
+    </div>
+    <!-- Welcome Page  -->
+    <div class="welcome-page" id="welcomePage">
+      <div class="success-message">
+        Welcome back! You have logged in successfully.
+      </div>
+      <div class="auth-option">
+        <div class="auth-button" id="changePassword">Change Password</div>
+        <div class="auth-button" id="logoutUser">Logout User</div>
       </div>
     </div>
   </body>

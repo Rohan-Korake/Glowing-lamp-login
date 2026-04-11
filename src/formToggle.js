@@ -1,65 +1,61 @@
+import { toggleSwitch } from "./toggleSwitch.js";
+import { hideElement, showElement, hideComponent } from "./toggleVisibility.js";
+
 export function formToggle() {
   const forgotPasswordLink = document.getElementById("forgotPasswordLink");
-  const loginForm = document.getElementById("loginForm");
-  const forgotPassCard = document.getElementById("forgotPassCard");
-  const signUpForm = document.getElementById("signUpForm");
+  const forgotPasswordForm = document.getElementById("forgotPasswordForm");
 
   // Hide the forgot password card initially
-  if (forgotPassCard) {
-    forgotPassCard.style.display = "none";
-    signUpForm.style.display = "none";
+  if (forgotPasswordForm) {
+    hideComponent("forgotPasswordForm");
+    hideComponent("signUpForm");
   }
 
   // Display the forgot password card and hide log in form
-  if (forgotPasswordLink && loginForm && forgotPassCard) {
-    forgotPasswordLink.addEventListener("click", function () {
-      loginForm.style.display = "none";
-      loginForm.style.animation = "hiddenAnimation 1s forwards ease";
-      forgotPassCard.style.display = "flex";
-      forgotPassCard.style.animation = "opacityAnimation 1s forwards ease";
-      signUpForm.style.display = "none";
-      resetInputs();
-    });
-  } else {
-    console.warn("authNavigation.js: missing element(s)", {
-      forgotPasswordLink,
-      loginForm,
-      forgotPassCard,
-    });
-  }
+  forgotPasswordLink.addEventListener("click", function () {
+    hideElement("loginForm");
+    hideComponent("signUpForm");
+    hideElement("cancelButton");
+    showElement("backToLoginButton");
+    showElement("forgotPasswordForm");
+  });
 
   // Hide the forgot password card and display log in form
-  const backToLoginButton = document.getElementById("backToLoginButton");
-  if (backToLoginButton) {
-    backToLoginButton.addEventListener("click", function () {
-      forgotPassCard.style.display = "none";
-      forgotPassCard.style.animation = "hiddenAnimation 1s forwards ease";
-      loginForm.style.display = "flex";
-      loginForm.style.animation = "opacityAnimation 1s forwards ease";
-      signUpForm.style.display = "none";
-      resetInputs();
-    });
-  }
+  document.getElementById("backToLoginButton").addEventListener("click", () => {
+    hideElement("forgotPasswordForm");
+    hideComponent("signUpForm");
+    showElement("loginForm");
+  });
 
-  //Show signup form and hode other form
-  const singUplink = document.getElementById("singUplink");
-  singUplink.addEventListener("click", function () {
-    loginForm.style.display = "none";
-    loginForm.style.animation = "hiddenAnimation 1s forwards ease";
-    signUpForm.style.display = "flex";
-    signUpForm.style.animation = "opacityAnimation 1s forwards ease";
-    forgotPassCard.style.display = "none";
-    resetInputs();
+  //Show signup form and hide other form
+  document.getElementById("singUplink").addEventListener("click", () => {
+    hideElement("loginForm");
+    showElement("signUpForm");
+    hideComponent("forgotPasswordForm");
   });
 
   //Show login form hide other form
-  const loginFormLink = document.getElementById("loginFormLink");
-  loginFormLink.addEventListener("click", function () {
-    forgotPassCard.style.display = "none";
-    forgotPassCard.style.animation = "hiddenAnimation 1s forwards ease";
-    loginForm.style.display = "flex";
-    loginForm.style.animation = "opacityAnimation 1s forwards ease";
-    signUpForm.style.display = "none";
-    resetInputs();
+  document.getElementById("loginFormLink").addEventListener("click", () => {
+    hideElement("forgotPasswordForm");
+    hideComponent("signUpForm");
+    showElement("loginForm");
+  });
+
+  //show reset password form and hide welcome page
+  document.getElementById("changePassword").addEventListener("click", () => {
+    hideElement("welcomePage");
+    hideComponent("loginForm");
+    hideComponent("backToLoginButton");
+    showElement("formContainer");
+    showElement("forgotPasswordForm");
+    showElement("loginPage");
+    showElement("cancelButton");
+  });
+
+  // show welcome page and hide reset password form
+  document.getElementById("cancelButton").addEventListener("click", () => {
+    hideElement("forgotPasswordForm");
+    hideElement("loginPage");
+    showElement("welcomePage");
   });
 }

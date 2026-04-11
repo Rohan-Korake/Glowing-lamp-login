@@ -1,54 +1,45 @@
+import { resetInputs } from "./resetInputs.js";
 export function toggleSwitch() {
   const toggleSwitch = document.getElementById("btnState");
-  const btnSurface = document.getElementById("btnSurface");
 
+  toggleSwitch.addEventListener("click", function () {
+    resetInputs();
+    toggleState();
+  });
+}
+
+let isLampOn = false;
+export function toggleState() {
+  isLampOn = !isLampOn;
+
+  const btnSurface = document.getElementById("btnSurface");
   const glowState = document.getElementById("glowState");
   const unlitState = document.getElementById("unlitState");
-
   const glowLamp = document.getElementById("glowLamp");
   const unlitLamp = document.getElementById("unlitLamp");
-
   const formContainer = document.getElementById("formContainer");
-
   const usernameLabel = document.getElementById("usernameLabel");
   const passwordLabel = document.getElementById("passwordLabel");
   const registeredEmailLabel = document.getElementById("registeredEmailLabel");
 
-  const username = document.getElementById("username");
-  const password = document.getElementById("password");
+  btnSurface.style.justifyContent = isLampOn ? "flex-end" : "flex-start";
 
-  const checkBox = document.getElementById("checkBox");
+  passwordLabel.style.display = isLampOn ? "block" : "none";
+  usernameLabel.style.display = isLampOn ? "block" : "none";
+  registeredEmailLabel.style.display = isLampOn ? "block" : "none";
 
-  let isLampOn = false;
-  toggleSwitch.addEventListener("click", function () {
-    isLampOn = !isLampOn;
-    // Toggle lamp button
-    btnSurface.style.justifyContent = isLampOn ? "flex-end" : "flex-start";
+  glowState.style.display = isLampOn ? "block" : "none";
+  unlitState.style.display = isLampOn ? "none" : "block";
 
-    // Input field label
-    passwordLabel.style.display = isLampOn ? "block" : "none";
-    usernameLabel.style.display = isLampOn ? "block" : "none";
-    registeredEmailLabel.style.display = isLampOn ? "block" : "none";
+  glowLamp.style.display = isLampOn ? "block" : "none";
+  unlitLamp.style.display = isLampOn ? "none" : "block";
 
-    //Lamp state
-    glowState.style.display = isLampOn ? "block" : "none";
-    unlitState.style.display = isLampOn ? "none" : "block";
+  formContainer.style.visibility = isLampOn ? "visible" : "hidden";
+  formContainer.style.animation = isLampOn
+    ? "showAnimation 1s forwards ease"
+    : "hiddenAnimation 1s forwards ease";
 
-    //Button state
-    glowLamp.style.display = isLampOn ? "block" : "none";
-    unlitLamp.style.display = isLampOn ? "none" : "block";
-
-    //Lamp animation
-    formContainer.style.visibility = isLampOn ? "visible" : "hidden";
-    formContainer.style.animation = isLampOn
-      ? "opacityAnimation 1s forwards ease"
-      : "hiddenAnimation 1s forwards ease";
-
-    if (isLampOn) {
-      username.value = "";
-      password.value = "";
-      checkBox.checked = false;
-      isLampOn = true;
-    }
-  });
+  if (isLampOn) {
+    resetInputs();
+  }
 }

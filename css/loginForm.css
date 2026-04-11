@@ -6,24 +6,6 @@
   visibility: hidden;
 }
 
-@keyframes opacityAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes hiddenAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .formInnerContainer {
   display: flex;
   justify-content: center;
