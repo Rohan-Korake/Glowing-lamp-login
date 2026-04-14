@@ -2,6 +2,7 @@ import { resetInputs } from "./resetInputs.js";
 import { toggleSwitch } from "./toggleSwitch.js";
 import { formToggle } from "./formToggle.js";
 import { userLogin } from "./login.js";
+import { signUp } from "./signUp.js";
 import { hideComponent, showElement } from "./toggleVisibility.js";
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -10,6 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
   toggleSwitch();
   formToggle();
   userLogin();
+  signUp();
 });
 
 function initialElement() {

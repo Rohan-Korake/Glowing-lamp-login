@@ -13,7 +13,7 @@ export function userLogin() {
     showLoader();
     const userName = document.getElementById("userName").value;
     const password = document.getElementById("password").value;
-    fetch("https://authentication-service-m7q3.onrender.com/auth/login", {
+    fetch("https://authentication-service-vdxw.onrender.com/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -32,7 +32,7 @@
   background: transparent;
   border-radius: 0.3125rem;
   outline: none;
-  color: aliceblue;
+  color: rgb(182, 183, 184);
 }
 
 .firstName label,
@@ -63,7 +63,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin: 1rem;
 }
 
 .AlreadyAccount {
@@ -113,8 +112,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin: 0.5rem;
   }
+
   .AlreadyAccount {
     font-size: 0.8rem;
     color: #d7d1d1;
@@ -166,8 +165,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin: 0.5rem;
   }
+
   .AlreadyAccount {
     font-size: 1rem;
     color: #d7d1d1;

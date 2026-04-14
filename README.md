@@ -28,6 +28,10 @@ The project includes **Login, Signup, and Forgot Password** sections — all wit
 
 ---
 
+## Authentication Module
+
+- User Login
+
 ## Preview
 
 <p align="center">

@@ -126,19 +126,14 @@
               </div>
             </div>
             <div class="inputField">
-              <input
-                type="password"
-                id="confirmNewPassword"
-                autocomplete="off"
-                required
-              />
+              <input type="email" id="newEmail" autocomplete="off" required />
               <label id="EmailAddress">Email Address</label>
               <div class="field-error" id="newEmailError"></div>
             </div>
             <div class="inputField">
               <input
                 type="password"
-                id="confirmNewPassword"
+                id="newPassword"
                 autocomplete="off"
                 required
               />
@@ -148,14 +143,14 @@
             <div class="inputField">
               <input
                 type="password"
-                id="confirmNewPassword"
+                id="confirmPassword"
                 autocomplete="off"
                 required
               />
               <label id="confirmNewPasswordLabel">Confirm Password</label>
               <div class="field-error" id="confirmPasswordError"></div>
             </div>
-            <div class="form-button">Create Account</div>
+            <button class="form-button" type="submit">Create Account</button>
             <div class="loginRedirectContainer">
               <div class="AlreadyAccount">Already have an account?</div>
               <div class="loginLinkContainer" id="loginFormLink">Login</div>
