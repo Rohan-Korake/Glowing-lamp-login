@@ -37,17 +37,8 @@ export function userLogin() {
 
         switch (status) {
           case 400:
-            showError("loginFormError", body.message);
-            break;
-
           case 401:
-            showError("loginFormError", body.message);
-            break;
-
           case 403:
-            showError("loginFormError", body.message);
-            break;
-
           case 500:
             showError("loginFormError", body.message);
             break;
