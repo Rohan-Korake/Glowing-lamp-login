@@ -3,31 +3,32 @@ import {
   showElement,
   hideError,
   showError,
-} from "./toggleVisibility.js";
+} from './toggleVisibility.js';
 
-import { showLoader, hideLoader } from "./main.js";
+import { showLoader, hideLoader } from './main.js';
 
 export function userLogin() {
-  document.getElementById("loginForm").addEventListener("submit", async (e) => {
+  document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     showLoader();
-    hideError("loginFormError");
-    const userName = document.getElementById("userName").value;
-    const password = document.getElementById("password").value;
+
+    hideError('loginFormError');
+    const userName = document.getElementById('userName').value;
+    const password = document.getElementById('password').value;
 
     try {
       const response = await fetch(
-        "https://authentication-service-vdxw.onrender.com/auth/login",
+        'https://authentication-service-vdxw.onrender.com/auth/login',
         {
-          method: "POST",
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({
             email: userName,
             password: password,
           }),
-        },
+        }
       );
 
       const data = await response.json();
@@ -39,24 +40,32 @@ export function userLogin() {
         case 400:
         case 401:
         case 403:
-          showError("loginFormError", body.message);
+          showError('loginFormError', 'Verification email sent. Please verify');
           break;
+
         case 500:
-          showError("loginFormError", body.message);
+          showError('loginFormError', body.message);
           break;
 
         case 200:
-          hideError("loginFormError");
-          hideElement("loginPage");
-          showElement("welcomePage");
+          hideError('loginFormError');
+          hideElement('loginPage');
+          showElement('welcomePage');
           break;
 
         default:
-          showError("loginFormError", "Unexpected error");
+          showError('loginFormError', 'Unexpected error');
       }
     } catch (error) {
       hideLoader();
-      showError("loginFormError", "No internet connection");
+      if (!navigator.onLine) {
+        showError('loginFormError', 'No internet connection');
+      } else {
+        showError(
+          'loginFormError',
+          'Server unavailable. Please try again later.'
+        );
+      }
     }
   });
 }
