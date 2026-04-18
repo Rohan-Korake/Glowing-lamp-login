@@ -1,11 +1,18 @@
 import { showLoader, hideLoader } from "./main.js";
-import { showError, showSuccess } from "./handleVisibility.js";
+import {
+  hideError,
+  hideInfoFields,
+  showError,
+  showSuccess,
+} from "./handleVisibility.js";
 export function forgotPass() {
   document
     .getElementById("forgotPasswordForm")
     .addEventListener("submit", async (e) => {
       e.preventDefault();
+      hideInfoFields();
       showLoader();
+      hideError("changePasswordForm");
       const registeredEmail = document.getElementById("registeredEmail").value;
 
       try {
@@ -22,13 +29,17 @@ export function forgotPass() {
           },
         );
 
-        console.log(response);
+        const data = await response.json();
         hideLoader();
         const status = response.status;
         const body = data;
 
         switch (status) {
           case 400:
+            showError("forgotPasswordFormError", "Invalid input");
+            break;
+
+          case 401:
             showError(
               "forgotPasswordFormError",
               body.message || "Invalid input",
