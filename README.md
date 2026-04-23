@@ -57,3 +57,6 @@ Connected to a backend that enables account creation, login/logout, password res
   <img src="Preview/Preview5.png" width="45%" />
   <img src="Preview/Preview6.png" width="45%" />
 </p>
+<p align="center">
+  <img src="Preview/Preview7.png" width="45%" />
+</p>

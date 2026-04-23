@@ -29,7 +29,7 @@ export async function handleLogoutRequest() {
         break;
 
       case 200:
-        localStorage.removeItem("rememberMe");
+        await localStorage.removeItem("rememberMe");
         hideElement("welcomePage");
         showElement("authPage");
         showElement("loginForm");
@@ -49,19 +49,20 @@ export async function handleLogoutRequest() {
   }
 }
 
-const rememberMeCheckbox = document.getElementById("rememberMe");
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
   showLoader();
+  const rememberMeCheckbox = document.getElementById("rememberMe");
   const remember = localStorage.getItem("rememberMe");
+
   if (!remember) {
-    handleLogoutRequest();
+    await handleLogoutRequest();
   }
 });
 
-window.addEventListener("close", () => {
+window.addEventListener("close", async () => {
   showLoader();
   const remember = localStorage.getItem("rememberMe");
   if (!remember) {
-    handleLogoutRequest();
+    await handleLogoutRequest();
   }
 });

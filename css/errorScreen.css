@@ -39,7 +39,7 @@
 
 .error-title {
   font-size: 2.5rem;
-  color: rgb(234, 239, 244);
+  color: rgb(212, 213, 215);
   font-weight: 500;
 }
 
@@ -50,14 +50,15 @@
 
 .error-title span i {
   margin: 0.5rem;
+  font-size: 2.5rem;
 }
 
 .error-message {
-  width: 22rem;
+  width: 32rem;
   display: flex;
   flex-wrap: wrap;
   font-size: 1.5rem;
-  color: rgba(234, 239, 244, 0.942);
+  color: rgba(202, 205, 208, 0.942);
   text-align: center;
 }
 
@@ -95,6 +96,10 @@
 
   .error-title span {
     margin: 0.5rem;
+  }
+
+  .error-title span i {
+    font-size: 1rem;
   }
 
   .error-message {

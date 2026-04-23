@@ -95,6 +95,7 @@ rememberMeCheckbox.addEventListener("change", (e) => {
 
 // call get me when reload
 window.addEventListener("DOMContentLoaded", async () => {
+  hideElement("authPage");
   showLoader();
   await handleGetMeRequest();
 });
