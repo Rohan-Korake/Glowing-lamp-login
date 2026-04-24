@@ -21,6 +21,7 @@ Connected to a backend that enables account creation, login/logout, password res
 - **Smooth transitions & minimalistic design**
 - **No browser auto-suggest** for clean input fields
 - **Input reset functionality included**
+- Implemented a custom **500 server error** page
 
 ---
 
@@ -33,7 +34,7 @@ Connected to a backend that enables account creation, login/logout, password res
 
 ---
 
-## Completed Authentication Module
+## Authentication Module
 
 - Login
 - Sign Up
