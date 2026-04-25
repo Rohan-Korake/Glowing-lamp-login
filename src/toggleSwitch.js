@@ -10,6 +10,7 @@ export function toggleSwitch() {
   });
 }
 
+// handle the lamp state
 let isLampOn = false;
 export function toggleState() {
   isLampOn = !isLampOn;

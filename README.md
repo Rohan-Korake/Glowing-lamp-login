@@ -19,7 +19,7 @@ Connected to a backend that enables account creation, login/logout, password res
 - Responsive and minimal UI
 - Smooth transitions
 - Input reset support
-- Custom 500 server error page
+- Custom 500 server error page with retry button
 
 ---
 

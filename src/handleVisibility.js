@@ -43,6 +43,7 @@ export function showSuccess(element, message) {
   ele.innerText = message;
 }
 
+// reset all input feilds and error fields
 export function hideInfoFields() {
   document.getElementById("logOutError").style.display = "none";
 

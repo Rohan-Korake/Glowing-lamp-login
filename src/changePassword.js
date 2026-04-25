@@ -12,6 +12,7 @@ export function changePassword() {
     });
 }
 
+// handle change password request
 export async function handleChangePassRequest() {
   showLoader();
   const userMailId = document.getElementById("userMailId").value;

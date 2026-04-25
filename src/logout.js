@@ -8,6 +8,7 @@ export function logout() {
   });
 }
 
+// handle logut request
 export async function handleLogoutRequest() {
   showLoader();
   try {
@@ -56,6 +57,7 @@ export async function handleLogoutRequest() {
   }
 }
 
+// remove cookie when page is reload and remember me is not checked
 window.addEventListener("DOMContentLoaded", async () => {
   showLoader();
   const remember = localStorage.getItem("rememberMe");
@@ -65,6 +67,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
+// remove cookie when page is close and remember me is not checked
 window.addEventListener("close", async () => {
   showLoader();
   const remember = localStorage.getItem("rememberMe");

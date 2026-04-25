@@ -16,6 +16,7 @@ export function forgotPass() {
     });
 }
 
+// handle forgot password request
 export async function handleForgotPassRequest() {
   showLoader();
   const registeredEmail = document.getElementById("registeredEmail").value;

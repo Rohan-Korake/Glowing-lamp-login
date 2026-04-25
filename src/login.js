@@ -17,6 +17,7 @@ export function userLogin() {
   });
 }
 
+// handle login request
 export async function handleLoginRequest() {
   showLoader();
   hideError("loginFormError");
@@ -26,7 +27,7 @@ export async function handleLoginRequest() {
 
   try {
     const response = await fetch(
-      "https://authentication-service-vdxw.onrender.com/auth/login",
+      "https://authentication-service-vdxyw.onrender.com/auth/login",
       {
         method: "POST",
         headers: {
@@ -205,7 +206,8 @@ async function updateAccessToken() {
     if (!navigator.onLine) {
       showError("loginFormError", "No internet connection");
     } else {
-      console.error("Network or fetch error:", error);
+      hideElement("authPage");
+      showElement("serverErrorContainer");
       isTokenValid = false;
       handleLogoutRequest();
     }

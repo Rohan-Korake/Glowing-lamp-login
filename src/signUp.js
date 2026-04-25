@@ -18,6 +18,7 @@ export function signUp() {
     });
 }
 
+// validate the user input before sending to server
 export async function validateInput() {
   showLoader();
   const firstName = document.getElementById("firstName").value;
@@ -54,6 +55,7 @@ export async function validateInput() {
   handleSignUpRquest(newEmail, confirmPassword, firstName, lastName);
 }
 
+// handle signUp request
 export async function handleSignUpRquest(
   newEmail,
   confirmPassword,

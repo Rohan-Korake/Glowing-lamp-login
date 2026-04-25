@@ -35,6 +35,7 @@ export function hideLoader() {
   document.querySelector(".loader").classList.remove("active");
 }
 
+// handle eye opener event
 document.querySelectorAll(".toggle-eye").forEach((icon) => {
   icon.addEventListener("click", () => {
     const targetId = icon.getAttribute("data-target");
@@ -50,10 +51,12 @@ document.querySelectorAll(".toggle-eye").forEach((icon) => {
 
 let currectRequest = null;
 
+// update the current request
 export function setCurrentRequest(requestName) {
   currectRequest = requestName;
 }
 
+// handle retry API request event
 document.getElementById("retryButton").addEventListener("click", () => {
   hideElement("serverErrorContainer");
   switch (currectRequest) {
